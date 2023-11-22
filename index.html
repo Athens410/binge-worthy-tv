@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/ddc3ee268a.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/cc9db0f074.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Mono&family=Red+Hat+Display&family=Sassy+Frass&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@500;700&display=swap"
+        rel="stylesheet" />
+    <title>C</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="script.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver"></script>
+
+
+</head>
+<style>
+    body {
+        background-color: black;
+        background-repeat: repeat;
+        overflow: auto;
+
+
+        margin: 0;
+        animation: animate 8s infinite;
+
+
+    }
+
+    .fade-in {
+        opacity: 0;
+        transition: opacity 250ms ease-in;
+    }
+
+
+    .fade-in.appear {
+        opacity: 1;
+    }
+
+
+    .turn {
+        background-color: azure;
+    }
+
+
+    .nav-link i {
+        color: red !important;
+    }
+
+    .nav-link.active {
+        color: red;
+    }
+
+    .nine {
+
+
+
+
+        font-size: 20px;
+        color: rgb(255, 0, 0);
+    }
+
+    h1,
+    h2 {
+
+
+        text-align: center;
+
+
+
+
+        color: aliceblue;
+
+
+
+
+        font-family: 'Red Hat Display', sans-serif;
+
+
+    }
+
+
+    .navbar-nav .nav-link,
+    .navbar-brand {
+        color: white !important;
+        font-family: 'Red Hat Display', sans-serif;
+    }
+
+
+
+
+
+
+
+
+    .bottom-bar {
+        width: 100%;
+        height: 7px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(45deg, rgb(0, 0, 0), rgb(255, 0, 0), rgb(0, 0, 0));
+        filter: brightness(2.8) blur(6px);
+        animation: moveLeftRight 3s linear infinite;
+    }
+
+
+
+
+
+
+
+
+    .color-box {
+        max-width: 100%;
+        height: 20%;
+    }
+
+
+
+
+    .image-zoom {
+        transform: scale(1.1);
+        transition: transform 0.3s;
+    }
+
+
+
+
+    .col-md-3:hover .round {
+        transform: scale(1.1);
+    }
+
+
+
+
+
+
+    @keyframes moveLeftRight {
+        0% {
+            transform: translateY(0%);
+        }
+
+        50% {
+            transform: translateY(100%);
+        }
+    }
+
+    .glare {
+        color: aliceblue;
+
+
+
+
+        font-family: 'Red Hat Display', sans-serif;
+
+
+
+
+    }
+
+    .rue {
+        font-size: small;
+        text-align: center;
+        font-family: 'Red Hat Display', sans-serif;
+        color: rgb(180, 28, 28);
+    }
+
+    .container {
+
+
+
+
+        margin: 0 auto;
+
+
+    }
+
+    .round {
+        border-radius: 60px;
+        margin: 12px;
+        border: 1px solid rgba(255, 0, 0, 0.351);
+    }
+
+
+    img {
+        max-width: 100%;
+        padding: 2px;
+
+
+
+
+
+
+    }
+
+
+
+
+    .col-6 {
+        margin: 0 auto;
+    }
+
+    @media (max-width: 798px) {
+        .col-6 {
+            margin: 0 auto;
+        }
+    }
+
+
+
+
+
+
+    .navbar {
+        border: 1px solid rgb(255, 0, 0);
+        border-radius: 12px;
+        animation: glow 1s infinite alternate;
+    }
+
+
+    @keyframes glow {
+        0% {
+            border-color: rgb(255, 2, 2);
+            box-shadow: 0 0 5px rgb(112, 0, 0);
+        }
+
+        100% {
+            border-color: #000000b6;
+            box-shadow: none;
+        }
+    }
+</style>
+
+<body class="your-element">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #000000b6; ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/index.html" title="Homepage">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"
+                style="color: white !important;">
+                🍿🍬🎞️
+            </button>
+
+
+
+
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="https://www.netflix.com/ca/title/80024057" title="Instructions"
+                        target="_blank">Watch
+                        on Netlifx!</a>
+                    <a class="nav-link"
+                        href="https://tv.apple.com/ca/show/how-to-get-away-with-murder/umc.cmc.42u0ogfqrwnrmzic3ekpsylp1"
+                        title="Instructions" target="_blank">Watch on Apple Tv!</a>
+                    <a class="nav-link" href="https://www.youtube.com/watch?v=z9-0b4FGzuk" title="Instructions"
+                        target="_blank">Watch on YouTube!</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="bottom-bar">
+        <div class="color-box red"></div>
+        <div class="color-box green"></div>
+        <div class="color-box blue"></div>
+    </div>
+
+
+
+
+    <div class="container">
+        <h1>How to</h1>
+        <div class="row">
+            <div class="col-6">
+                <img class="fade-in"
+                    src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/101/852/original/e9ad3867df57d50ba5627d3e4c76f4ce.jpg?1698181498"
+                    alt="" srcset="">
+
+
+                <h2>About</h2>
+                <p class="glare "><b class="nine">"How to Get Away with Murder" </b> is a legal drama and mystery
+                    television series that revolves around the life of Annalise
+                    Keating, a brilliant and charismatic law professor and criminal defence attorney. The show is known
+                    for its complex and
+                    suspenseful narrative, with several intertwined storylines.<b class="nine"> Here's a general
+                        overview of what the series is about: </b>
+                    <b class="nine"> Annalise Keating (Viola Davis)</b> :<br>
+                    Annalise is a formidable defence attorney and a professor at Middleton University. She
+                    selects a group of her top law students to work for her at her law firm. Annalise is a complex
+                    character who often finds
+                    herself entangled in morally ambiguous situations.
+                    <b class="nine"> The Keating Five:</b> The main narrative of the series revolves around a group of
+                    five law students who are handpicked by
+                    Annalise to work for her firm. These students become deeply involved in high-stakes, real-life legal
+                    cases and are
+                    forced to confront their own moral dilemmas.
+                    <b class="nine">Murder Mysteries :</b> The series is framed around a series of murder mysteries. In
+                    the very first episode, a murder takes
+                    place, and the series unfolds as a series of flashbacks, flash-forwards, and present-day events as
+                    viewers are kept in
+                    suspense regarding the identity of the victim and the murderer.
+                    <b class="nine">Character Development:</b> The show delves into the lives of the main characters,
+                    exploring their personal and professional
+                    struggles, secrets, and relationships.
+                    <b class="nine">Legal Cases:</b> Each season features a different legal case that Annalise and her
+                    students are tasked with solving or
+                    defending. These cases often intersect with the main murder mystery storyline.
+                    The series is known for its intricate plot twists, morally complex characters, and its exploration
+                    of themes such as
+                    justice, ethics, and the consequences of one's actions. It received critical acclaim and has a
+                    dedicated fan following.
+                    If you enjoy legal dramas with elements of mystery and suspense, "How to Get Away with Murder" is a
+                    series worth
+                    checking out!
+                </p>
+            </div>
+
+
+        </div>
+        <div class="row align-items-center mt-auto">
+            <h2>Main Cast</h2>
+            <div class="col-md-3 text-center">
+                <img class="round "
+                    src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/101/969/original/images_%281%29.jpeg?1698270403"
+                    alt="" srcset="">
+                <p class="glare">Viola Davis</p>
+            </div>
+
+
+            <div class="col-md-3 text-center">
+                <img class="round"
+                    src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/101/970/original/Untitled-3.png?169827068"
+                    alt="" srcset="">
+                <p class="glare">Aja Naomi King</p>
+            </div>
+
+
+            <div class="col-md-3 text-center">
+                <img class="round"
+                    src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/101/973/original/Untitled-3.png?1698271214"
+                    alt="" srcset="">
+                <p class="glare">Jack Falahee</p>
+            </div>
+
+
+            <div class="col-md-3 text-center">
+                <img class="round"
+                    src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/101/971/original/Untitled-3.png?1698271027"
+                    alt="" srcset="">
+                <p class="glare">Liza Weil</p>
+            </div>
+
+
+            <div class="col-md-3 text-center">
+                <img class="round" src="
+https://s3.amazonaws.com/shecodesio-production/uploads/files/000/101/972/original/Untitled-3.png?1698271121" alt=""
+                    srcset="">
+                <p class="glare">Alfred Enoch</p>
+            </div>
+
+
+            <div class="col-md-3 text-center">
+                <img class="round"
+                    src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/101/974/original/Untitled-3.png?1698271343"
+                    alt="" srcset="">
+                <p class="glare">Karla Souza</p>
+            </div>
+            <div class="col-md-3 text-center">
+                <img class="round"
+                    src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/101/977/original/Untitled-3.png?1698272747"
+                    alt="" srcset="">
+                <p class="glare">Charlie Weber</p>
+            </div>
+
+
+            <div class="col-md-3 text-center">
+                <img class="round "
+                    src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/102/021/original/Untitled-4.png?1698334005"
+                    alt="" srcset="">
+                <p class="glare">Billy Brown</p>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+    <ul class="nav justify-content-center mt-5">
+        <li class="nav-item">
+            <a class="nav-link active" href="https://www.shecodes.io/" target="_blank"
+                title="SheCodes profile">SheCodes</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa-brands fa-instagram" title="Instagram"></i></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://linkedin.com/in/athenah-c-2639251a0" target="_blank"
+                title="linkedin profile"> <i class="fa-brands fa-linkedin"></i></a>
+        </li>
+        <li>
+            <a class="nav-link" href="https://github.com/Athens410/Portfolio-Project-Git.git" target="_blank"
+                title="github profile"> <i class="fa-brands fa-github"></i></a>
+        </li>
+
+
+
+
+
+
+
+
+        <li class="nav-item ml-5">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">© 2021 SheCodes All rights
+                reserved.</a>
+        </li>
+
+
+
+
+    </ul>
+
+
+    <form>
+
+
+        <div class="rue">
+            <h3>🖤🩸 🩶This website was coded by, Athenah Coucean🖤🩸 🩶</h3>
+
+
+        </div>
+        <script>
+            const faders = document.querySelectorAll('.fade-in');
+
+
+            const appearOptions = {
+                threshold: 1,
+                rootMargin: '0px'
+            };
+
+
+            const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    } else {
+                        entry.target.classList.add('appear');
+                        appearOnScroll.unobserve(entry.target);
+                    }
+                });
+            }, appearOptions);
+
+
+            faders.forEach((fader) => {
+                appearOnScroll.observe(fader);
+            });
+
+
+            const handleScroll = () => {
+                const scrollPosition = window.scrollY;
+                const image = document.querySelector('.fade-in');
+
+
+                if (scrollPosition === 0) {
+                    image.classList.add('appear');
+                } else {
+                    image.classList.remove('appear');
+                }
+            }
+
+
+
+
+            window.addEventListener('scroll', handleScroll);
+
+
+
+
+
+
+        </script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>
