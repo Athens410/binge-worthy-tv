@@ -152,8 +152,9 @@ border-radius: 8px;
 }
 
 
-
-
+.completed {
+    color:  coral;
+}
     .bottom-bar {
         width: 100%;
         height: 10px;
@@ -510,7 +511,7 @@ https://s3.amazonaws.com/shecodesio-production/uploads/files/000/114/007/origina
     <p class="glare">Aja Naomi King</p>
 </div>
 
-<h2 class="mt-5 mb">Why?</h2>
+<h2 class="mt-5 mb-5">Why?</h2>
 
 
 
@@ -518,13 +519,16 @@ https://s3.amazonaws.com/shecodesio-production/uploads/files/000/114/007/origina
 <div class="row text-center">
 
 <div class="col-sm">
-<p class="inter">
+<p class="inter"   >
 
-    <b>
+    <b id="fork" style="cursor: pointer;">
         Matt McGorry3
 
     </b>
+<div id="info" style="display: none;">
 
+    Matt McGorry is an American actor known for his roles in...
+</div>
 </p>
 
 </div>
@@ -608,6 +612,15 @@ Matt McGorry
 
         </div>
         <script>
+
+
+
+
+
+
+
+
+
             const faders = document.querySelectorAll('.fade-in');
 
 
@@ -656,7 +669,14 @@ Matt McGorry
 
 
 
-        </script>
+     
+
+
+document.querySelector("#fork").addEventListener("click", function (event){
+
+
+document.q
+})
 
 
 
@@ -664,7 +684,7 @@ Matt McGorry
 
 
 
-
+   </script>
 </body>
 
 </html>
