@@ -545,7 +545,7 @@ Viola Davis
 </b>
 <div id="jame" style="display: none;">
 
-    Matt McGorry is an American actor known for his roles in...
+    Matt McGorry is an American actor known for his roles in.33..
 </div>
 </p>
 
@@ -687,7 +687,11 @@ document.querySelector("#info").style.display = (document.querySelector("#info")
 
 
 
-document.querySelector("#dave").addEventListener("click", function(event))
+document.querySelector("#dave").addEventListener("click", function(event){
+
+
+    document.querySelector("#dave").style.display = (document.querySelector("#dave").style.display === "none")? "block" : "none"
+})
 
 
    </script>
